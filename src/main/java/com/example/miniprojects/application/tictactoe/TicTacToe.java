@@ -1,7 +1,10 @@
 package com.example.miniprojects.application.tictactoe;
 
+import lombok.Getter;
+
 import java.io.Serializable;
 
+@Getter
 public class TicTacToe implements Serializable {
     private String[] board; // 9 squares: 0 to 8
     private String currentPlayer;
@@ -65,11 +68,5 @@ public class TicTacToe implements Serializable {
             isDraw = true;
         }
     }
-
-    // Getters and Setters
-    public String[] getBoard() { return board; }
-    public String getCurrentPlayer() { return currentPlayer; }
-    public String getWinner() { return winner; }
-    public boolean isDraw() { return isDraw; }
 }
 
