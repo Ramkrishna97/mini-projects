@@ -1,0 +1,43 @@
+                                                            Mini project apps :
+calculator
+rock-paper-scissor
+note app
+clock app
+stopwatch app
+landing page
+password generator
+tic tac toe game
+survey app
+portfolio site
+
+quiz app
+QR code reader
+drawing app
+link shortener website
+weather app
+movie app
+chat app
+food order site
+e-commerce website
+
+e-book site
+twitter clone
+instagram clone
+whatsapp clone
+netflix clone
+pinterest clone
+file sharing app
+parallax website
+job search app
+dating app
+social media dashboard
+tracker app
+memory app
+giphy clone
+user activity tracker
+stock trading app
+chess game
+music player
+to-do list app
+random user api
+typing speed test
