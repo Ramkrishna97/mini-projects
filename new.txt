@@ -1,7 +1,7 @@
                                                             Mini project apps :
 
 1. tic tac toe game --------done
-calculator
+2. calculator   ------------done
 rock-paper-scissor
 note app
 clock app
