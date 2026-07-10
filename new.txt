@@ -1,4 +1,6 @@
                                                             Mini project apps :
+
+1. tic tac toe game --------done
 calculator
 rock-paper-scissor
 note app
@@ -6,7 +8,6 @@ clock app
 stopwatch app
 landing page
 password generator
-tic tac toe game
 survey app
 portfolio site
 
