@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot Tic-Tac-Toe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-gap: 5px;
+            justify-content: center;
+            margin: 20px auto;
+        }
+        .cell-btn {
+            width: 100px;
+            height: 100px;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #ffffff;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        .cell-btn:disabled {
+            color: #333;
+            cursor: not-allowed;
+        }
+        .reset-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Tic-Tac-Toe</h1>
+
+    <!-- Display Current Status / Game Over Messages -->
+    <div th:if="${game.winner == null && !game.isDraw()}">
+        <h3>Current Player: <span th:text="${game.currentPlayer}"></span></h3>
+    </div>
+    <div th:if="${game.winner != null}">
+        <h2 style="color: green;">Player <span th:text="${game.winner}"></span> Wins! 🎉</h2>
+    </div>
+    <div th:if="${game.isDraw()}">
+        <h2 style="color: orange;">It's a Draw! 👔</h2>
+    </div>
+
+    <!-- The 3x3 Grid Board -->
+    <div class="board">
+        <div th:each="cell, iterStat : ${game.board}">
+            <form th:action="@{/tictactoe/move}" method="post">
+                <input type="hidden" name="position" th:value="${iterStat.index}" />
+                <button type="submit"
+                        class="cell-btn"
+                        th:text="${cell}"
+                        th:disabled="${cell != '' || game.winner != null || game.isDraw()}">
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Reset Match Action Button -->
+    <form th:action="@{/tictactoe/reset}" method="post" style="margin-top: 20px;">
+        <button type="submit" class="reset-btn">Reset Game</button>
+    </form>
+</div>
+
+</body>
+</html>
