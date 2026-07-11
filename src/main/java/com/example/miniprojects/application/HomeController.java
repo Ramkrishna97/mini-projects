@@ -28,6 +28,12 @@ public class HomeController {
                         "Play Tic Tac Toe",
                         "🎮",
                         "/tictactoe/"
+                ),
+                new Project(
+                        "To Do List",
+                        "To do with CRUD Operation",
+                        "⌨",
+                        "/todo"
                 )
 
         );
