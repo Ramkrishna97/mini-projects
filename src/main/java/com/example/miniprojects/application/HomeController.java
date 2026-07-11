@@ -1,6 +1,5 @@
 package com.example.miniprojects.application;
 
-
 import com.example.miniprojects.Project;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -3,7 +3,6 @@ package com.example.miniprojects.application.to_do_list;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -20,13 +19,11 @@ public class TodoController {
 
         model.addAttribute("todos", todos);
         model.addAttribute("total", todos.size());
-
         long completed = todos.stream()
                 .filter(Todo::isCompleted)
                 .count();
 
         model.addAttribute("completed", completed);
-
         return "todo";
     }
 
@@ -35,9 +32,7 @@ public class TodoController {
 
         if (task != null && !task.trim().isEmpty()) {
             Todo todo = new Todo(counter.incrementAndGet(), task);
-
             System.out.println("ID = " + todo.getId());
-
             todos.add(todo);
         }
 
@@ -57,7 +52,6 @@ public class TodoController {
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Long id) {
         todos.removeIf(t -> t.getId().equals(id));
-
         return "redirect:/todo";
     }
     @GetMapping("/edit/{id}")
