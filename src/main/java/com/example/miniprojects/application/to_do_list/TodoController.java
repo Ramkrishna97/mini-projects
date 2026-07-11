@@ -34,7 +34,11 @@ public class TodoController {
     public String add(@RequestParam String task) {
 
         if (task != null && !task.trim().isEmpty()) {
-            todos.add(new Todo(counter.incrementAndGet(), task));
+            Todo todo = new Todo(counter.incrementAndGet(), task);
+
+            System.out.println("ID = " + todo.getId());
+
+            todos.add(todo);
         }
 
         return "redirect:/todo";
@@ -55,6 +59,38 @@ public class TodoController {
     public String delete(@PathVariable Long id) {
 
         todos.removeIf(t -> t.getId().equals(id));
+
+        return "redirect:/todo";
+    }
+    @GetMapping("/edit/{id}")
+    public String edit(@PathVariable Long id, Model model) {
+
+        Todo todo = todos.stream()
+                .filter(t -> t.getId().equals(id))
+                .findFirst()
+                .orElse(null);
+
+        model.addAttribute("todo", todo);
+        model.addAttribute("todos", todos);
+
+        long completed = todos.stream()
+                .filter(Todo::isCompleted)
+                .count();
+
+        model.addAttribute("total", todos.size());
+        model.addAttribute("completed", completed);
+
+        return "todo";
+    }
+
+    @PostMapping("/update")
+    public String update(@RequestParam Long id,
+                         @RequestParam String task) {
+
+        todos.stream()
+                .filter(t -> t.getId().equals(id))
+                .findFirst()
+                .ifPresent(t -> t.setTask(task));
 
         return "redirect:/todo";
     }

@@ -132,15 +132,22 @@
 
   </div>
 
-  <form th:action="@{/todo/add}" method="post">
+  <form th:action="${todo != null} ? @{/todo/update} : @{/todo/add}"
+        method="post">
 
     <input
             type="text"
             name="task"
+            th:value="${todo != null} ? ${todo.task} : ''"
             placeholder="Enter Task"
             required>
+    <input type="hidden"
+           name="id"
+           th:value="${todo != null} ? ${todo.id} : ''">
 
-    <button>Add</button>
+    <button
+            th:text="${todo != null} ? 'Update Task' : 'Add Task'">
+    </button>
 
   </form>
 
@@ -155,15 +162,15 @@
 
     </tr>
 
-    <tr th:each="todo : ${todos}">
+    <tr th:each="item : ${todos}">
 
-      <td th:text="${todo.id}"></td>
+      <td th:text="${item.id}"></td>
 
       <td>
 
                 <span
-                        th:text="${todo.task}"
-                        th:class="${todo.completed} ? 'done' : 'pending'">
+                        th:text="${item.task}"
+                        th:class="${item.completed} ? 'done' : 'pending'">
                 </span>
 
       </td>
@@ -171,7 +178,7 @@
       <td>
 
                 <span
-                        th:text="${todo.completed} ? 'Completed' : 'Pending'">
+                        th:text="${item.completed} ? 'Completed' : 'Pending'">
                 </span>
 
       </td>
@@ -179,12 +186,17 @@
       <td class="actions">
 
         <a class="complete"
-           th:href="@{'/todo/complete/' + ${todo.id}}">
+           th:href="@{'/todo/complete/' + ${item.id}}">
           ✔
         </a>
 
+        <a class="edit"
+           th:href="@{'/todo/edit/' + ${item.id}}">
+          ✏️
+        </a>
+
         <a class="delete"
-           th:href="@{'/todo/delete/' + ${todo.id}}">
+           th:href="@{/todo/delete/{id}(id=${item.id})}">
           ✖
         </a>
 
