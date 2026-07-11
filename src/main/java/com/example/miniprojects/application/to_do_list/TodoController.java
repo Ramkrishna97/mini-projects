@@ -43,7 +43,6 @@ public class TodoController {
 
         return "redirect:/todo";
     }
-
     @GetMapping("/complete/{id}")
     public String complete(@PathVariable Long id) {
 
