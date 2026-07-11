@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <title>To-Do List</title>
+
+  <style>
+
+    body{
+
+      background:#f4f4f4;
+      font-family:Arial;
+    }
+
+    .container{
+
+      width:700px;
+      margin:40px auto;
+      background:white;
+      padding:30px;
+      border-radius:10px;
+      box-shadow:0 0 10px rgba(0,0,0,.2);
+
+    }
+
+    h2{
+      text-align:center;
+    }
+
+    form{
+
+      display:flex;
+      gap:10px;
+      margin-bottom:20px;
+
+    }
+
+    input{
+
+      flex:1;
+      padding:10px;
+      font-size:16px;
+
+    }
+
+    button{
+
+      padding:10px 20px;
+      cursor:pointer;
+      background:#007BFF;
+      color:white;
+      border:none;
+      border-radius:5px;
+
+    }
+
+    table{
+
+      width:100%;
+      border-collapse:collapse;
+
+    }
+
+    td,th{
+
+      border-bottom:1px solid #ddd;
+      padding:12px;
+
+    }
+
+    .done{
+
+      text-decoration:line-through;
+      color:green;
+      font-weight:bold;
+
+    }
+
+    .pending{
+
+      color:#333;
+
+    }
+
+    .actions a{
+
+      margin-right:10px;
+      text-decoration:none;
+      font-weight:bold;
+
+    }
+
+    .complete{
+
+      color:green;
+
+    }
+
+    .delete{
+
+      color:red;
+
+    }
+
+    .stats{
+
+      margin-bottom:20px;
+      font-weight:bold;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <h2>📝 To-Do List</h2>
+
+  <div class="stats">
+
+    Total Tasks :
+    <span th:text="${total}"></span>
+
+    |
+
+    Completed :
+    <span th:text="${completed}"></span>
+
+  </div>
+
+  <form th:action="@{/todo/add}" method="post">
+
+    <input
+            type="text"
+            name="task"
+            placeholder="Enter Task"
+            required>
+
+    <button>Add</button>
+
+  </form>
+
+  <table>
+
+    <tr>
+
+      <th>ID</th>
+      <th>Task</th>
+      <th>Status</th>
+      <th>Action</th>
+
+    </tr>
+
+    <tr th:each="todo : ${todos}">
+
+      <td th:text="${todo.id}"></td>
+
+      <td>
+
+                <span
+                        th:text="${todo.task}"
+                        th:class="${todo.completed} ? 'done' : 'pending'">
+                </span>
+
+      </td>
+
+      <td>
+
+                <span
+                        th:text="${todo.completed} ? 'Completed' : 'Pending'">
+                </span>
+
+      </td>
+
+      <td class="actions">
+
+        <a class="complete"
+           th:href="@{'/todo/complete/' + ${todo.id}}">
+          ✔
+        </a>
+
+        <a class="delete"
+           th:href="@{'/todo/delete/' + ${todo.id}}">
+          ✖
+        </a>
+
+      </td>
+
+    </tr>
+
+  </table>
+
+</div>
+
+</body>
+
+</html>

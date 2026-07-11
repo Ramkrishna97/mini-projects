@@ -1,0 +1,128 @@
+| Project             | Icon |
+| ------------------- | ---- |
+| Landing Page        | 🏠   |
+| Parallax Website    | 🌄   |
+| Drawing             | 🎨   |
+| Meme Generator      | 😂   |
+| Password Generator  | 🔐   |
+| QR Code Generator   | 📱   |
+| QR Code Reader      | 📷   |
+| Analog Clock        | 🕒   |
+| Stopwatch           | ⏱️   |
+| Rock Paper Scissors | ✊    |
+| Typing Test         | ⌨️   |
+| Memory Game         | 🧠   |
+| Quiz                | ❓    |
+| Chess               | ♟️   |
+| Notes               | 📝   |
+| Survey              | 📋   |
+| Tracker             | 📊   |
+| Portfolio Site      | 💼   |
+| Weather App         | 🌦️  |
+| Live Chat App       | 💬   |
+| Music Player        | 🎵   |
+| File Sharing        | 📂   |
+| Job Search          | 🔎   |
+| Ordering Site       | 🛒   |
+| Twitter Clone       | 🐦   |
+| Netflix Clone       | 🎬   |
+| WhatsApp Clone      | 💚   |
+| Pinterest Clone     | 📌   |
+| Giphy Clone         | 🎞️  |
+| Amazon Clone        | 📦   |
+| Banking Clone       | 🏦   |
+
+
+
+
+
+
+OR
+
+
+
+
+
+🏡  Home
+🖼️  Website
+🖌️  Drawing
+🤣  Meme
+🔑  Password
+🔳  QR Code
+📸  Scanner
+🕰️  Clock
+⏲️  Timer
+✌️  RPS
+⌨️  Typing
+🎯  Memory
+🎓  Quiz
+👑  Chess
+📒  Notes
+📑  Survey
+📈  Tracker
+👨‍💻  Portfolio
+☀️  Weather
+🗨️  Chat
+🎧  Music
+📤  File Sharing
+💼  Jobs
+🛍️  Shopping
+🐤  Twitter
+🍿  Netflix
+📲  WhatsApp
+📍  Pinterest
+🎥  Giphy
+🚚  Amazon
+💳  Banking
+
+
+
+
+
+OR
+
+
+
+
+🏠 Landing Page
+🌄 Parallax Website
+🎨 Drawing
+😂 Meme Generator
+🔐 Password Generator
+📱 QR Code Generator
+📷 QR Code Reader
+🕒 Analog Clock
+⏱️ Stopwatch
+✊ Rock Paper Scissors
+⌨️ Typing Test
+🧠 Memory Game
+❓ Quiz
+♟️ Chess
+📝 Notes
+📋 Survey
+📊 Tracker
+💼 Portfolio Site
+🌦️ Weather App
+💬 Live Chat App
+🎵 Music Player
+📂 File Sharing
+🔎 Job Search
+🛒 Ordering Site
+🐦 Twitter Clone
+🎬 Netflix Clone
+💚 WhatsApp Clone
+📌 Pinterest Clone
+🎞️ Giphy Clone
+📦 Amazon Clone
+🏦 Banking Clone
+
+
+
+
+
+
+
+
+
+
+
