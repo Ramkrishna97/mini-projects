@@ -2,9 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-
   <title>To-Do List</title>
-
   <style>
 
     body{
@@ -166,20 +164,15 @@
 
       <td th:text="${item.id}"></td>
 
-      <td>
-
-                <span
+      <td><span
                         th:text="${item.task}"
                         th:class="${item.completed} ? 'done' : 'pending'">
-                </span>
-
+      </span>
       </td>
 
-      <td>
-
-                <span
+      <td><span
                         th:text="${item.completed} ? 'Completed' : 'Pending'">
-                </span>
+          </span>
 
       </td>
 
@@ -194,14 +187,11 @@
            th:href="@{'/todo/edit/' + ${item.id}}">
           ✏️
         </a>
-
         <a class="delete"
            th:href="@{/todo/delete/{id}(id=${item.id})}">
           ✖
         </a>
-
       </td>
-
     </tr>
 
   </table>
