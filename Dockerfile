@@ -13,8 +13,7 @@ COPY src ./src
 # Build the application
 RUN mvn clean package -DskipTests
 
-# Create final image with JRE only
-FROM openjdk:17-slim
+
 
 # Set working directory
 WORKDIR /app
