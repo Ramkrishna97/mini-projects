@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Mini Projects Hub</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial;
+        }
+
+        body{
+
+            background:#f4f6f9;
+            padding:40px;
+
+        }
+
+        h1{
+
+            text-align:center;
+            margin-bottom:10px;
+
+        }
+
+        .subtitle{
+
+            text-align:center;
+            color:#666;
+            margin-bottom:40px;
+
+        }
+
+        .grid{
+
+            display:grid;
+
+            grid-template-columns:
+                repeat(auto-fit,minmax(260px,1fr));
+
+            gap:25px;
+
+        }
+
+        .card{
+
+            background:white;
+
+            border-radius:12px;
+
+            padding:25px;
+
+            box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+            transition:.3s;
+
+        }
+
+        .card:hover{
+
+            transform:translateY(-5px);
+
+        }
+
+        .icon{
+
+            font-size:50px;
+
+        }
+
+        h2{
+
+            margin:15px 0;
+
+        }
+
+        p{
+
+            color:#666;
+
+            min-height:50px;
+
+        }
+
+        a{
+
+            display:inline-block;
+
+            margin-top:20px;
+
+            text-decoration:none;
+
+            background:#2563eb;
+
+            color:white;
+
+            padding:10px 18px;
+
+            border-radius:8px;
+
+        }
+
+        a:hover{
+
+            background:#1d4ed8;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>🚀 Mini Projects Hub</h1>
+
+<p class="subtitle">
+    One Spring Boot Application • Multiple Projects
+</p>
+
+<div class="grid">
+
+    <div class="card"
+         th:each="project : ${projects}">
+
+        <div class="icon"
+             th:text="${project.icon}">
+        </div>
+
+        <h2 th:text="${project.name}"></h2>
+
+        <p th:text="${project.description}"></p>
+
+        <a th:href="${project.url}">
+            Launch Project →
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
