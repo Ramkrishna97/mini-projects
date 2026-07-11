@@ -1,14 +1,63 @@
-                                                            Mini project apps :
-
+                                       Mini project apps :
+Utilities :
 1. tic tac toe game --------done
-2. calculator   ------------done
-rock-paper-scissor
-note app
-clock app
-stopwatch app
+Password Generator
+QR code generator
+QR code reader
+analog clock
+Stopwatch
+Link shortner
+
+
+Games :
+Tic Tac Toe     ------------done
+Rock Paper Scissor
+Typing Test
+Memory Game
+Quiz
+Chess
+
+
+Productivity :
+To-Do List
+Notes
+Survey
+Tracker
+
+
+API-Based :
+Portfolio site
+Weather app
+live chat app
+music player
+
+Business :
+File sharing
+job search
+ordering site
+
+Social Media Clones :
+Twitter clone
+Netflix clone
+Whatsapp clone
+Pinterest clone
+Giphy clone
+Amazon clone
+Banking clone
+
+Creative :
+Landing page
+Parallax website
+Drawing
+Meme Generator
+
+
+
+
+
+
 landing page
-password generator
-survey app
+
 portfolio site
 
 quiz app
