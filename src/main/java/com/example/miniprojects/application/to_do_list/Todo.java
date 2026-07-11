@@ -8,7 +8,6 @@ public class Todo {
 
     public Todo() {
     }
-
     public Todo(Long id, String task) {
         this.id = id;
         this.task = task;
