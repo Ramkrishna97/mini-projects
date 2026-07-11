@@ -1,1 +1,12 @@
 Tic Tac Toe Game :
+Description : has a fixed layout . Updates the page on every input.
+Function: create a layout of 3x3 . create the winning pattern[ horz, vertical, cross ],
+          if winning pattern matched, declare current player as winner ,
+          input takes position[ on click ], marks it as 'x' [or non-empty""] , switches player
+          continue game until board is not full, declare winner or draw.
+
+
+UI : Display
+     Shows the layout by default , current player , status[ winner, draw, reset]
+     check status from jva application, show page status accordingly , seperate style for each status
+

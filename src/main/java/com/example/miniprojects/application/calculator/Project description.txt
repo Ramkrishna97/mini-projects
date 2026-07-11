@@ -1,1 +1,4 @@
 Calculator App :
+Functions : addition, substraction , multiply , divide ... only
+Design : take num (2 for now ) as input , operator as input.
+         Manually write operator check, and provide action for that operator.
