@@ -1,5 +1,10 @@
 package com.example.miniprojects.application.to_do_list;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Todo {
 
     private Long id;
@@ -12,22 +17,6 @@ public class Todo {
         this.id = id;
         this.task = task;
         this.completed = false;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTask() {
-        return task;
-    }
-
-    public void setTask(String task) {
-        this.task = task;
     }
 
     public boolean isCompleted() {
