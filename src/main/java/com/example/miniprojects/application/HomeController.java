@@ -12,7 +12,6 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(Model model) {
-
         List<Project> projects = List.of(
 
                 new Project(

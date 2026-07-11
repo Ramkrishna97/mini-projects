@@ -1,6 +1,6 @@
                                        Mini project apps :
 Utilities :
-1. tic tac toe game --------done
+1. tic tac toe game ----------done
 Password Generator
 QR code generator
 QR code reader
