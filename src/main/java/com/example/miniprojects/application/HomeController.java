@@ -32,6 +32,12 @@ public class HomeController {
                         "To do with CRUD Operation",
                         "⌨",
                         "/todo"
+                ),
+                new Project(
+                        "REST based chat App",
+                        "Used REST instead of webhooks for 2 person conversation chat APP",
+                        "💬Chat🗨️",
+                        "/chat"
                 )
 
         );
