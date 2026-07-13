@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>REST Chat App</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            background:#ece5dd;
+        }
+
+        .chat{
+            height:450px;
+            border:1px solid gray;
+            background:#f5f5f5;
+            overflow-y:auto;
+            padding:15px;
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+        }
+
+        .message{
+            max-width:70%;
+            padding:10px 15px;
+            border-radius:15px;
+            word-wrap:break-word;
+            font-size:16px;
+        }
+
+        .user1{
+            align-self:flex-end;
+            background:#dcf8c6;
+            text-align:left;
+            border-bottom-right-radius:4px;
+        }
+
+        .user2{
+            align-self:flex-start;
+            background:white;
+            text-align:left;
+            border-bottom-left-radius:4px;
+        }
+
+        .username{
+            font-size:12px;
+            font-weight:bold;
+            margin-bottom:5px;
+            color:#666;
+        }
+        .container{
+            width:700px;
+            margin:auto;
+            margin-top:40px;
+        }
+
+        .bottom{
+
+            display:flex;
+            margin-top:10px;
+        }
+
+        input{
+
+            flex:1;
+            padding:10px;
+            font-size:16px;
+        }
+
+        button{
+
+            width:120px;
+            font-size:16px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h2>REST Chat App</h2>
+    <div id="chatBox" class="chat"></div>
+    <div class="bottom">
+
+        <input
+                id="message"
+                type="text"
+                placeholder="Type message..."
+                onkeypress="if(event.key==='Enter')sendMessage()">
+
+        <button onclick="sendMessage()">
+
+            Send
+
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+    loadConversation();
+
+    setInterval(loadConversation,1000);
+
+    function loadConversation(){
+
+        fetch("/chat/conversation")
+            .then(r => r.text())
+            .then(data => {
+
+                const chatBox = document.getElementById("chatBox");
+                chatBox.innerHTML = "";
+
+                const lines = data.trim().split("\n");
+
+                lines.forEach(line => {
+
+                    if(line.trim() === "") return;
+
+                    const parts = line.split(" : ");
+
+                    if(parts.length < 2) return;
+
+                    const user = parts[0].trim();
+                    const message = parts.slice(1).join(" : ");
+
+                    const bubble = document.createElement("div");
+                    bubble.classList.add("message");
+
+                    if(user === "User1")
+                        bubble.classList.add("user1");
+                    else
+                        bubble.classList.add("user2");
+
+                    bubble.innerHTML =
+                        "<div class='username'>" + user + "</div>" +
+                        "<div>" + message + "</div>";
+
+                    chatBox.appendChild(bubble);
+
+                });
+
+                chatBox.scrollTop = chatBox.scrollHeight;
+
+            });
+
+    }
+
+    function sendMessage(){
+
+        let msg=document.getElementById("message").value;
+
+        if(msg.trim()==="") return;
+
+        fetch("/chat/message",{
+
+            method:"POST",
+
+            headers:{
+                "Content-Type":"application/json"
+            },
+
+            body:JSON.stringify({
+
+                message:msg
+
+            })
+
+        })
+            .then(()=>{
+
+                document.getElementById("message").value="";
+
+                loadConversation();
+
+            });
+
+    }
+
+</script>
+
+</body>
+
+</html>
